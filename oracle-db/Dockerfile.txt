@@ -1,0 +1,12 @@
+# Usa imagem oficial Oracle XE (base Linux slim)
+FROM container-registry.oracle.com/database/express:21.3.0
+
+# Define diretório de trabalho personalizado
+WORKDIR /home/oracle/customdb
+
+# Define variáveis de ambiente obrigatórias
+ENV ORACLE_PWD=admin123 \
+    ORACLE_ALLOW_REMOTE=true
+
+# Expõe porta padrão Oracle
+EXPOSE 1521

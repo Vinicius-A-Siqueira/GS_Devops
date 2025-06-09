@@ -1,0 +1,14 @@
+# Usa Java 17 com Alpine como base
+FROM eclipse-temurin:17-jdk-alpine
+
+# Define diretório de trabalho
+WORKDIR /app
+
+# Copia o JAR gerado pela build do Maven
+COPY target/FloodTech-0.0.1-SNAPSHOT.jar app.jar
+
+# Expõe a porta da aplicação
+EXPOSE 8080
+
+# Executa o JAR
+ENTRYPOINT ["java", "-jar", "app.jar"]
